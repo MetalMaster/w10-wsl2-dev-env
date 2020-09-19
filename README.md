@@ -73,6 +73,17 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 ```
 nvm install --lts
 ```
+* Install VSCode NodeJs extension pack: https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack
+* Create an express project:
+```
+npx express-generator nodejs-express-example --view=pug
+```
+* Start express project
+```
+npx cross-env DEBUG=nodejs-express-example:* npm start
+```
+
+
 
 
 
