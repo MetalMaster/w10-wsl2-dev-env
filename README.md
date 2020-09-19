@@ -44,6 +44,14 @@ wsl -l -v
 usermod -a -G docker <USERNAME>
 ```
 
+## Configure git
+
+* Set commit email and name
+```
+git config --global user.email <YOUR_EMAIL>
+git config --global user.name <YOUR_NAME>
+```
+
 ## Java development
 
 * Install JDK on linux:
