@@ -20,6 +20,17 @@ wsl --set-default-version 2
 * Run Linux (the first time it will ask to create a new user)
 * If you got an error on file system compression or crypto, go to Folder: C:\Users\<YOUR_USER>\AppData\Local\Packages\<YOUR_LINUX_DISTRO> and Right Click -> Properties -> General -> Advanced: remove the flag from "Compress contents to save disk space"
 
+## Useful WSL commands
+
+* Set a linux distro as the default distro:
+```
+wsl --set-default <distro_name>
+```
+* List all VMs:
+```
+wsl -l -v
+```
+
 ## Install Visual Studio Code and usefull plugins
 
 * Install Visual Studio Code: https://code.visualstudio.com/#alt-downloads
@@ -30,6 +41,14 @@ wsl --set-default-version 2
 * Install Docker and WSL plugins: https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2
 * On linux shell add user to "docker" group:
 ```
-usermod -G docker <USERNAME>
+usermod -a -G docker <USERNAME>
 ```
+
+## Java development
+
+* Install JDK on linux:
+```
+sudo apt install default-jdk
+```
+* Install VSCode Java Extension pack: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
 
