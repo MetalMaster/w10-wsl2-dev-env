@@ -50,5 +50,9 @@ usermod -a -G docker <USERNAME>
 ```
 sudo apt install default-jdk
 ```
+* Set JAVA_HOME environment variable:
+```
+echo JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64 >> /home/<USER>/.profile
+```
 * Install VSCode Java Extension pack: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
 
