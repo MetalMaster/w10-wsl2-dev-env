@@ -54,5 +54,27 @@ sudo apt install default-jdk
 ```
 echo JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64 >> /home/<USER>/.profile
 ```
+
+### Use VSCode as IDE
 * Install VSCode Java Extension pack: https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack
+* Install Spring Boot Extention Pack: https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack
+
+### Use IntelliJ as IDE
+* Install Intellij: https://www.jetbrains.com/idea/download/#section=windows
+
+
+## NodeJS development
+
+* Install nvm:
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+```
+* Install nodejs LTS version: 
+```
+nvm install --lts
+```
+
+
+
+
 
