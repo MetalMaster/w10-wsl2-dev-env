@@ -35,6 +35,7 @@ wsl -l -v
 
 * Install Visual Studio Code: https://code.visualstudio.com/#alt-downloads
 * Install VSCode Remote Development Extension Pack: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+* Install VSCode Docker extension pack: https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-extension-pack
 
 ## Install docker
 
@@ -82,13 +83,16 @@ npx express-generator nodejs-express-example --view=pug
 ```
 npx cross-env DEBUG=nodejs-express-example:* npm start
 ```
+* To dockerize the app use the script docker-start.sh that builds and runs a docker container with the app embedded
+* The file docker_env.list contains Environment variables that will be pushed to the app
 
 ## Using MongoDB for development
 
 * Start container with docker and mount a volume:
 ```
-docker run --name <DEFINE_A_NAME> -p 27017:27017 -v <PATH_TO_YOUR_DATA_DIR>:/data/db -d mongo
+docker run --name <CONTAINER_NAME> --network <NETWORK_NAME> -p <PORT>:27017 -v <PATH_TO_YOUR_DATA_DIR>:/data/db -d mongo
 ```
+
 
 
 

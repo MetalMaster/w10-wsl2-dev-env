@@ -3,9 +3,11 @@ var router = express.Router();
 
 const { MongoClient } = require("mongodb");
 
-const uri = "mongodb://localhost:27017/test"; //FIXME
 
-const client = new MongoClient(uri);
+const mongoUri = process.env.MONGO_URI;
+const mongoDb = process.env.MONGO_DB;
+
+
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
@@ -19,7 +21,11 @@ router.get('/', async function(req, res, next) {
 });
 
 async function getUsers() {
+  const client = new MongoClient(uri);
+  
   try {
+    
+
     await client.connect();
 
     const database = client.db("test"); //FIXME
@@ -32,7 +38,8 @@ async function getUsers() {
     const usersDto = [];
 
     // since this method returns the matched document, not a cursor, print it directly
-    users.forEach(function(u){
+    
+    await users.forEach(function(u){
       usersDto.push(u);
     });
 
