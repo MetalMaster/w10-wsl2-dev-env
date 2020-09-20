@@ -83,6 +83,12 @@ npx express-generator nodejs-express-example --view=pug
 npx cross-env DEBUG=nodejs-express-example:* npm start
 ```
 
+## Using MongoDB for development
+
+* Start container with docker and mount a volume:
+```
+docker run --name <DEFINE_A_NAME> -p 27017:27017 -v <PATH_TO_YOUR_DATA_DIR>:/data/db -d mongo
+```
 
 
 
