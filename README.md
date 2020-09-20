@@ -36,6 +36,7 @@ wsl -l -v
 * Install Visual Studio Code: https://code.visualstudio.com/#alt-downloads
 * Install VSCode Remote Development Extension Pack: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
 * Install VSCode Docker extension pack: https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-extension-pack
+* (Optional) Install VSCode Eclipse Keymap: https://marketplace.visualstudio.com/items?itemName=alphabotsec.vscode-eclipse-keybindings
 
 ## Install docker
 
@@ -70,6 +71,10 @@ echo JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64 >> /home/<USER>/.profile
 
 ### Use IntelliJ as IDE
 * Install Intellij: https://www.jetbrains.com/idea/download/#section=windows
+
+### Dockerize spring boot application
+* Run the maven command:
+mvn spring-boot:build-image -Dspring-boot.build-image.imageName=$PROJECT_NAME
 
 
 ## NodeJS development
