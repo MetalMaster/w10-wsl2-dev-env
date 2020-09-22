@@ -1,39 +1,37 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Example service",
-    "version": "0.0.1",
-    "title": "Example",
+    "description": "NodeJs Example API",
+    "version": "0.0.1-SNAPSHOT",
+    "title": "nodejs-express-example",
     "contact": {
-      "email": "apiteam@swagger.io"
+      "email": "author@example.com"
     },
     "license": {
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "example.swagger.io",
-  "basePath": "/api",
+  "host": "localhost:8080",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
   "tags": [
     {
       "name": "system",
-      "description": "System APIs",
-      "externalDocs": {
-        "description": "Find out more",
-        "url": "http://swagger.io"
-      }
+      "description": "System APIs"
+    },
+    {
+      "name": "users",
+      "description": "User APIs"
     }
-  ],
-  "schemes": [
-    "https",
-    "http"
   ],
   "paths": {
     "/system/version": {
       "get": {
         "tags": [
-          "system",
-          "version"
+          "system"
         ],
         "summary": "Get application version",
         "description": "Returns the application version",
@@ -48,29 +46,29 @@
               "$ref": "#/definitions/Version"
             }
           }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
-      }
-    }
-  },
-  "securityDefinitions": {
-    "petstore_auth": {
-      "type": "oauth2",
-      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
-      "flow": "implicit",
-      "scopes": {
-        "write:pets": "modify pets in your account",
-        "read:pets": "read your pets"
+        }
       }
     },
-    "api_key": {
-      "type": "apiKey",
-      "name": "api_key",
-      "in": "header"
+    "/users": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Get list of users",
+        "description": "Returns the list of users",
+        "operationId": "getUserList",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/UserList"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -81,10 +79,26 @@
           "type": "string"
         }
       }
+    },
+    "UserList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/User"
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        }
+      }
     }
-  },
-  "externalDocs": {
-    "description": "Find out more about Swagger",
-    "url": "http://swagger.io"
   }
 }
