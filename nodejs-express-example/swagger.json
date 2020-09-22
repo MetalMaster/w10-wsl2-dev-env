@@ -69,6 +69,27 @@
           }
         }
       }
+    },
+    "/users/:id": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Get a user by id",
+        "description": "Returns the user detail",
+        "operationId": "getUserById",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {

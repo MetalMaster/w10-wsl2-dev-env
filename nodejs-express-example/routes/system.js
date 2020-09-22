@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET APP version. */
 router.get('/version', async function(req, res, next) {
   
   const json = {
