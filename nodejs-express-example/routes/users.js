@@ -4,46 +4,35 @@ var router = express.Router();
 const { MongoClient } = require("mongodb");
 
 
-const mongoUri = process.env.MONGO_URI;
-const mongoDb = process.env.MONGO_DB;
-
+const MONGO_URI = process.env.MONGO_URI;
+const MONGO_DB = process.env.MONGO_DB;
+const MONGO_COLLECTION = "user";
 
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
 
-  
   const users = await getUsers().catch(console.dir);
 
   res.send(users);
-
   
 });
 
 async function getUsers() {
-  const client = new MongoClient(uri);
+  const client = new MongoClient(MONGO_URI);
   
   try {
-    
 
     await client.connect();
 
-    const database = client.db("test"); //FIXME
-    const collection = database.collection("user"); //FIXME
+    const database = client.db(MONGO_DB);
+    const collection = database.collection(MONGO_COLLECTION);
     
     const query = { };
     
     const users = await collection.find(query);
 
-    const usersDto = [];
-
-    // since this method returns the matched document, not a cursor, print it directly
-    
-    await users.forEach(function(u){
-      usersDto.push(u);
-    });
-
-    return usersDto;
+    return users.toArray();
 
   } finally {
     await client.close();
