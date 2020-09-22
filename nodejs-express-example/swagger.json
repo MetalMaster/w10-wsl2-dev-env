@@ -70,7 +70,7 @@
         }
       }
     },
-    "/users/:id": {
+    "/users/{id}": {
       "get": {
         "tags": [
           "users"
@@ -78,6 +78,14 @@
         "summary": "Get a user by id",
         "description": "Returns the user detail",
         "operationId": "getUserById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
         "produces": [
           "application/json"
         ],
