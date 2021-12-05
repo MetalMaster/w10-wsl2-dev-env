@@ -31,12 +31,18 @@ wsl --set-default <distro_name>
 wsl -l -v
 ```
 
+## Set user home on WSL
+* Open settings.json in the WSL terminal via CTRL+SHIFT+,
+* Under Profiles -> List -> name: "Ubuntu ..."  add the attribute: "startingDirectory": "//wsl$/<YOUR_LINUX_DISTRO>/home/<YOUR_USER>/"
+
 ## Install Visual Studio Code and usefull plugins
 
 * Install Visual Studio Code: https://code.visualstudio.com/#alt-downloads
 * Install VSCode Remote Development Extension Pack: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
 * Install VSCode Docker extension pack: https://marketplace.visualstudio.com/items?itemName=formulahendry.docker-extension-pack
+* Install VSCode GitGraph extension: https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
 * (Optional) Install VSCode Eclipse Keymap: https://marketplace.visualstudio.com/items?itemName=alphabotsec.vscode-eclipse-keybindings
+
 
 ## Install docker
 
@@ -105,6 +111,7 @@ npx cross-env DEBUG=nodejs-express-example:* npm start
 ```
 docker run --name <CONTAINER_NAME> --network <NETWORK_NAME> -p <PORT>:27017 -v <PATH_TO_YOUR_DATA_DIR>:/data/db -d mongo
 ```
+
 
 
 
